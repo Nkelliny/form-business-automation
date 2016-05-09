@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+    	<link href="css/bootstrap.css" rel="stylesheet">
+    	<link href="css/printAll.css" rel="stylesheet">
+    	<script src="js/bootstrap.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+
+
+	<body id="main">
+	<script type="text/javascript"> 
+window.onload=function(){self.print();} 
+</script> 
+	
+		<!--<div class="pageone">
+		
+			<h5 style="position: absolute; top: 133px; left: 8.6%; display: inline;"><strong>Last Name</strong></h5>
+			<h5 style="position: absolute; top: 133px; left: 38.4%; display: inline;"><strong>First Name</strong></h5>
+			<h5 style="position: absolute; top: 133px; left: 62.8%; display: inline;"><strong>Middle Name</strong></h5>
+			<h5 style="position: absolute; top: 133px; left: 81.6%; display: inline;"><strong>Suffix</strong></h5>
+			<h5 style="position: absolute; top: 199px; left: 8.8%;"><strong>Address</strong></h5>
+			<h5 style="position: absolute; top: 245px; left: 8.8%; display: inline;"><strong>City</strong></h5>
+			<h5 style="position: absolute; top: 245px; left: 33%; display: inline;"><strong>ST</strong></h5>
+			<h5 style="position: absolute; top: 245px; left: 38.6%; display: inline;"><strong>Zip</strong></h5>
+			<h5 style="position: absolute; top: 274px; left: 10%; display: inline;"><strong>MM</strong></h5>
+			<h5 style="position: absolute; top: 274px; left: 16%; display: inline;"><strong>DD</strong></h5>
+			<h5 style="position: absolute; top: 274px; left: 21.8%; display: inline;"><strong>YYYY</strong></h5>
+			<h5 style="position: absolute; top: 274px; left: 33.6%; display: inline;"><strong>201  212 2121</strong></h5>
+
+			<h5 style="position: absolute; top: 498px; left: 11%;"><strong>ASSIST_NAME</strong></h5>
+			<h5 style="position: absolute; top: 526px; left: 11%; display: inline;"><strong>ASSIST_ADDR</strong></h5>
+			<h5 style="position: absolute; top: 526px; left: 56%; display: inline;"><strong>ASSIST_CITY</strong></h5>
+			<h5 style="position: absolute; top: 526px; left: 77%; display: inline;"><strong>AS</strong></h5>
+			<h5 style="position: absolute; top: 526px; left: 83%; display: inline;"><strong>AS_ZIP</strong></h5>
+
+		</div class="pagetwo">
+		<div>
+
+		<div class="pageone">
+			<h5 class="lastname"><strong>Last Name</strong></h5>
+			<h5 class="firstname"><strong>First Name</strong></h5>
+			<h5 class="middlename"><strong>Middle Name</strong></h5>
+			<h5 class="suffix"><strong>Suffix</strong></h5>
+			<h5 class="address"><strong>Address</strong></h5>
+			<h5 class="city"><strong>City</strong></h5>
+			<h5 class="state"><strong>ST</strong></h5>
+			<h5 class="zip"><strong>Zip</strong></h5>
+			<h5 class="month"><strong>MM</strong></h5>
+			<h5 class="day"><strong>DD</strong></h5>
+			<h5 class="year"><strong>YYYY</strong></h5>
+			<h5 class="phone"><strong>201  212 2121</strong></h5>
+		</div>
+		</div class="pagetwo">
+		<div>
+
+		<div class="pageone">
+			<h5 class="lastname">Last Name</h5>
+			<h5 class="firstname">First Name</h5>
+			<h5 class="middlename">Middle Name</h5>
+			<h5 class="suffix">Suffix</h5>
+			<h5 class="address">Address</h5>
+			<h5 class="city">City</h5>
+			<h5 class="state">ST</h5>
+			<h5 class="zip">Zip</h5>
+			<h5 class="month">MM</h5>
+			<h5 class="day">DD</h5>
+			<h5 class="year">YYYY</h5>
+			<h5 class="phone">201  212 2121</h5>
+		</div>
+		</div class="pagetwo">
+		<div> -->
+
+		<script type="text/javascript">
+		console.log('sending AJAX request');
+		$.get('returnAllVoterInfo.php?id=ef9ab0f19f0893929823aad70ffd54edac56183ac663e5e5f120d0ddc570369d', function (data, status){
+			//console.log(data);
+			var resultArray = JSON.parse(data);
+			//console.log(resultArray[1]);
+			/*console.log(resultArray);
+			console.log("got AJAX request");//*/
+			//var divs = document.getElementsByTagName('div');
+
+			for (var i=0; i < resultArray.length; i++){
+				//iterate through every person object
+
+				var DOB = resultArray[i]["DOB"].split("/");
+				var MM = DOB[0];
+				var DD = DOB[1];
+				var YYYY = DOB[2];
+
+				var lastNH5 = document.createElement("H5");
+				lastNH5.className="lastname";
+				lastNH5.innerHTML = resultArray[i]['Lastname'];
+				var firstNH5 = document.createElement("H5");
+				firstNH5.className = "firstname";
+				firstNH5.innerHTML = resultArray[i]['Firstname'];
+				var middleNH5 = document.createElement("H5");
+				middleNH5.className = "middlename";
+				middleNH5.innerHTML = resultArray[i]['Middlename'];
+				var suffixH5 = document.createElement("H5");
+				suffixH5.className = "suffix";
+				suffixH5.innerHTML = resultArray[i]['Suffix'];
+				var addressH5 = document.createElement("H5");
+				addressH5.className = "address";
+				addressH5.innerHTML = resultArray[i]['Address'];
+				var cityH5 = document.createElement("H5");
+				cityH5.className = "city";
+				cityH5.innerHTML = resultArray[i]['City'];
+				var stateH5 = document.createElement("H5");
+				stateH5.className = "state";
+				stateH5.innerHTML = resultArray[i]['State'];
+				var zipH5 = document.createElement("H5");
+				zipH5.className = "zip";
+				zipH5.innerHTML = resultArray[i]['Zip5'];
+				var monthH5 = document.createElement("H5");
+				monthH5.className = "month";
+				monthH5.innerHTML = MM;
+				var dayH5 = document.createElement("H5");
+				dayH5.className = "day";
+				dayH5.innerHTML = DD;
+				var yearH5 = document.createElement("H5");
+				yearH5.className = "year";
+				yearH5.innerHTML = YYYY;
+				var phoneH5 = document.createElement("H5");
+				phoneH5.className = "phone";
+				phoneH5.innerHTML = resultArray[i]['Phone Number'];
+				//Assistor Section
+				if (resultArray[i]['_ID']){
+					var aNameH5 = document.createElement("H5");;
+				aNameH5.className = "ass_Name";
+				aNameH5.innerHTML = resultArray[i]['aName'];
+				var aAddressH5 = document.createElement("H5");
+				aAddressH5.className = "ass_Address";
+				aAddressH5.innerHTML = resultArray[i]['aAddress'];
+				var aMunicipalityH5 = document.createElement("H5");
+				aMunicipalityH5.className = "ass_Municipality";
+				aMunicipalityH5.innerHTML = resultArray[i]['aMunicipality'];
+				var aStateH5 = document.createElement("H5");
+				aStateH5.className = "ass_State";
+				aStateH5.innerHTML = resultArray[i]['aState'];
+				var aZipH5 = document.createElement("H5");
+				aZipH5.className = "ass_Zip";
+				aZipH5.innerHTML = resultArray[i]['aZip'];
+				}
+				
+
+				//append all h5 elements to div
+				var div = document.createElement("DIV");
+				div.className = "pageone";
+
+				div.appendChild(lastNH5);
+				div.appendChild(firstNH5);
+				div.appendChild(middleNH5);
+				div.appendChild(suffixH5);
+				div.appendChild(addressH5);
+				div.appendChild(cityH5);
+				div.appendChild(stateH5);
+				div.appendChild(zipH5);
+				div.appendChild(monthH5);
+				div.appendChild(dayH5);
+				div.appendChild(yearH5);
+				div.appendChild(phoneH5);
+
+				if (resultArray[i]['_ID']){
+					div.appendChild(aNameH5);
+				div.appendChild(aAddressH5);
+				div.appendChild(aMunicipalityH5);
+				div.appendChild(aStateH5);
+				div.appendChild(aZipH5);
+				}
+
+
+				var body = document.getElementById('main');
+
+				body.appendChild(div);//*/
+
+				var div2 = document.createElement("DIV");
+				div2.className = "pagetwo";
+
+				body.appendChild(div2);
+
+			}
+
+		});
+		
+		</script>
+
+	</body>
+
+
+
+
+</html>
