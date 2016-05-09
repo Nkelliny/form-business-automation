@@ -1,0 +1,120 @@
+
+			* {
+				-webkit-print-color-adjust: exact;
+			}
+			div{
+				/*background-image: url("../img/vote-mail-ballot-012712.png");*/
+				background-size: 100% 100%;
+				/*height: 100px;/*This value gets overwritten*/
+				height: 8.5in;
+				width: 6in;
+				page-break-after: always;
+				position: relative;
+			}
+			div h5{
+				font-weight: bold;
+			}
+			.pageone{
+				background-image: url("../img/votbymailfill1.png");
+			}
+			.pagetwo{
+				background-image: url("../img/votbymailfill2.png");	
+			}
+			.lastname{
+				position: absolute;
+				top: 133px;
+				left: 8.6%;
+				display: inline;
+			}
+
+			.firstname{
+				position: absolute;
+				top: 133px;
+				left: 38.4%;
+				display: inline;			
+			}
+			.middlename{
+				position: absolute;
+				top: 133px;
+				left: 62.8%;
+				display: inline;
+			}
+			.suffix{
+				position: absolute;
+				top: 133px;
+				left: 81.6%;
+				display: inline;
+			}
+			.address{
+				position: absolute;
+				top: 199px;
+				left: 8.8%;
+			}
+			.city{
+				position: absolute;
+				top: 245px;
+				left: 8.8%;
+				display: inline;
+			}
+			.state{
+				position: absolute;
+				top: 245px;
+				left: 33%;
+				display: inline;
+			}
+			.zip{
+				position: absolute;
+				top: 245px;
+				left: 38.6%;
+				display: inline;
+			}
+			.month{
+				position: absolute;
+				top: 274px;
+				left: 10%;
+				display: inline;
+			}
+			.day{
+				position: absolute;
+				top: 274px;
+				left: 16%;
+				display: inline;
+			}
+			.year{
+				position: absolute;
+				top: 274px;
+				left: 21.8%;
+				display: inline;
+			}
+			.phone{
+				position: absolute;
+				top: 274px;
+				left: 33.6%;
+				display: inline;
+			}
+			.ass_Name{
+				position: absolute;
+				top: 498px;
+				left: 11%;
+			}
+			.ass_Address{
+				position: absolute;
+				top: 526px;
+				left: 11%
+			}
+			.ass_Municipality{
+				position: absolute;
+				top: 526px;
+				left: 56%
+			}
+			.ass_State{
+				position: absolute;
+				top: 526px;
+				left: 77%
+			}
+			.ass_Zip{
+				position: absolute;
+				top: 526px;
+				left: 83%
+			}
+
