@@ -1,6 +1,6 @@
 <?
  $filename=$_POST['filename'];
- $db=mysql_connect('localhost', 'nkelliny', 'nkk82393') or die("Error in Connection: ".mysql_error());
+ $db=mysql_connect('hostname', 'username', 'password') or die("Error in Connection: ".mysql_error());
 	if(!$db){
 		die("no db");
 	}
